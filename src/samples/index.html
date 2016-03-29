@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>fake-vuejs</title>
+  </head>
+  <body>
+    <input type="text" v-model="name">
+
+    <script src="../dist/Vue.js"></script>
+    <script>
+      var vm = new Vue('body', { name: 'yjj'})
+
+      vm.$watch('name', function(newVal) {
+        console.log(newVal)
+      })
+
+      setTimeout(function() {
+        vm._data.name = 'zhansan'
+      }, 2000)
+
+    </script>
+  </body>
+</html>
